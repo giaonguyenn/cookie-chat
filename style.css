@@ -50,6 +50,11 @@ body {
   font-weight: bold;
 }
 
+#sort {
+  float: right;
+  color: black;
+}
+
 p{
   text-align: center;
   margin: 3px 0;

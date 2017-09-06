@@ -26,22 +26,16 @@
       <form><input type="text" class="form-control text-box" ng-model="searchTerm.message" placeholder="Seach Message">
       </form>
 
-<!--       <select class="filter" ng-model="searchTerm.message">
-        <option value="searchTerm.message">Search by Message</option>
-        <option value="searchTerm.date">Search by Date</option>
-      </select> -->
 
-      <!-- <select class="sortDate" ng-model="created_at">
-          <option value="-">Newest</option>
-          <option value="+">Oldest</option>
-        </select> -->
-
-      <div class="title">
-        <p>Messages from Suckassss</p>
+      <div>
+        <p class="title">Messages from Suckassss <span><select id="sort" ng-model="sortDirection" placeholder="SORT">
+          <option value="-createdAt">Newest</option>
+          <option value="+createdAt">Oldest</option>
+        </select></span></p>
       </div>
 
       <div class="messages-container">
-        <p ng-repeat="message in messages | filter: searchTerm">
+        <p ng-repeat="message in messages | filter: searchTerm | orderBy: sortDirection">
           {{message.message}} <span class="timeStamp"> {{message.createdAt | date: "short"}} </span> </p>
       </div>
     </div>
