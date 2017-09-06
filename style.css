@@ -1,3 +1,19 @@
+header {
+  background-image: url("https://img.grouponcdn.com/deal/3bHdH1mXuwbuLLhj5oNkXwJdmuWq/3b-960x582/v1/c700x420.jpg");
+  width: 75%;
+  height: 300px;
+  margin: auto;
+  position: relative;
+}
+
+img {
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 47.5%;
+  width: 100px;
+  height: 100px;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -7,27 +23,47 @@ body {
   height: 95%;
   width: 100%;
   font-family: sans-serif;
+  color: #444445;
 }
 
 .main-container {
   width: 75%;
-  margin: 10px auto;
+  margin: 30px auto;
   background: rgba(255, 255, 255, 0.86);
   padding: 5px;
   border-radius: 10px;
 }
 
-.main-container h1 {
+.main-container h1, h4, h6 {
   text-align: center;
 }
 
 .text-box {
   margin: 0px auto;
   width: 40%;
+  border-color: #3ca2e0;
+}
+
+.title {
+  background-color: grey;
+  color: white;
+  font-weight: bold;
 }
 
 p{
   text-align: center;
   margin: 3px 0;
+  padding: 15px;
   font-size: 17px;
+  border: 1px solid #C6E4F6;
+  border-radius: 3px;
+}
+
+.timeStamp {
+  background-color: #3ca2e0;
+  color: white;
+  border-radius: 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+  float: right;
 }

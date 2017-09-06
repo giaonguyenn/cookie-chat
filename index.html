@@ -5,15 +5,44 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <body ng-controller="mainCtrl">
+    <header>
+      
+    </header>
+
+    <div class="icon">
+        <img src="http://ios.devmountain.com/public/icon.png"/>
+    </div>
+
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
+      <h4> A simple parse powered not-so-private chat </h4>
+      <h6> BY GIAO NGUYEN </h6>
       <form ng-submit="postMessage(message)">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+        <input class="form-control text-box" type="text" ng-model="message" placeholder="Enter New Message">
       </form>
+
+      <form><input type="text" class="form-control text-box" ng-model="searchTerm.message" placeholder="Seach Message">
+      </form>
+
+<!--       <select class="filter" ng-model="searchTerm.message">
+        <option value="searchTerm.message">Search by Message</option>
+        <option value="searchTerm.date">Search by Date</option>
+      </select> -->
+
+      <!-- <select class="sortDate" ng-model="created_at">
+          <option value="-">Newest</option>
+          <option value="+">Oldest</option>
+        </select> -->
+
+      <div class="title">
+        <p>Messages from Suckassss</p>
+      </div>
+
       <div class="messages-container">
-        <p ng-repeat="message in messages ">
-          {{message.message}} </p>
+        <p ng-repeat="message in messages | filter: searchTerm">
+          {{message.message}} <span class="timeStamp"> {{message.createdAt | date: "short"}} </span> </p>
       </div>
     </div>
 
